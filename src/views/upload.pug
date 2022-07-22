@@ -1,0 +1,12 @@
+extends base.pug
+
+block content 
+    if errorMessage 
+        span=errorMessage
+    form(method="POST", enctype="mulipart/form-data")
+        label(for="video") Video File 
+        input(type="file", accept="video/*", required, id="video", name="video")
+        input(placeholder="Tilte",required,type="text",name = "title")
+        input(placeholder="Description",required,type="text",name ="description")
+        input(placeholder="Hashtags, seperated by comma.",type="text",name ="hashtags")
+        input(type="submit",value="Upload Video")
