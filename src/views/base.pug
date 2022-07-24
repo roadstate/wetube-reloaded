@@ -16,7 +16,7 @@ html(lan="ko")
                         li
                             a(href="/users/logout") Log Out
                         li 
-                            a()  #{loggedInUser.name}의 profile
+                            a(href=`/users/${loggedInUser._id}`) #{loggedInUser.name} 의 프로필
                         li 
                             a(href="/videos/upload") Upload Video
                          

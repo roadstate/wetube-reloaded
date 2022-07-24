@@ -1,5 +1,5 @@
 import express from "express";
-import { finishGithubLogin, finishKakaoLogin, getChangePassword, getEdit, logout, postChangePassword, postEdit, startGithubLogin, startKakaoLogin } from "../controllers/userController";
+import { finishGithubLogin, finishKakaoLogin, getChangePassword, getEdit, logout, postChangePassword, postEdit, startGithubLogin, startKakaoLogin, see } from "../controllers/userController";
 import { avatarUpload, protectorMiddleware, publicOnlyMiddleware } from "../middlewares";
 
 const userRouter = express.Router();
@@ -17,4 +17,6 @@ userRouter.get("/github/start", publicOnlyMiddleware, startGithubLogin)
 userRouter.get("/github/finish",publicOnlyMiddleware, finishGithubLogin)
 userRouter.get("/kakao/start",publicOnlyMiddleware, startKakaoLogin)
 userRouter.get("/kakao/finish", publicOnlyMiddleware,finishKakaoLogin)
+
+userRouter.get("/:id",see)
 export default userRouter;

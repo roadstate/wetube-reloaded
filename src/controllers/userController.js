@@ -276,3 +276,18 @@ export const postChangePassword = async(req,res) => {
     await user.save();
     return res.redirect("/");
 };
+export const see = async(req,res) => {
+    const {id} = req.params;
+    const user = await User.findById(id).populate("videos");
+    console.log(user)
+    if (!user) {
+        return res.status(404).render("404", {
+            pageTitle:"유저가 존재하지 않습니다.",
+        });
+    }
+
+    return res.render("profile", {
+        pageTitle:`${user.name}의 프로필`,
+        user,
+    });
+};
