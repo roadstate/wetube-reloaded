@@ -1,0 +1,30 @@
+header 
+    a(href="/").header__logo
+        i.fab.fa-youtube 
+        div GilTube
+        sup KR 
+    nav
+        ul      
+            li
+                a(href="/search") 
+                    i.fa-solid.fa-magnifying-glass
+            if loggedIn   
+                li 
+                    a(href="/users/edit") 프로필수정
+                li 
+                    a(href=`/users/${loggedInUser._id}`) #{loggedInUser.name} 의 동영상
+                li 
+                    a(href="/videos/upload").upload
+                        <i class="fa-solid fa-upload"></i> 업로드
+                li
+                    a(href="/users/logout").logout
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i> 로그아웃
+                    
+                    
+            else  
+                li
+                    a(href="/join") 회원가입
+                li
+                    a(href="/login").login
+                        <i class="fa-regular fa-user"></i> 로그인
+                    

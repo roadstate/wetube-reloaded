@@ -1,0 +1,10 @@
+.video-mixin__title{
+    font-size: 18px;
+    font-weight: 500;
+}
+.video-mixin__meta{
+    span{
+        color: rgba($color: white, $alpha: 0.8);
+        font-size: 13px;
+    }
+}

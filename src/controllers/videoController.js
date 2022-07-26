@@ -4,7 +4,10 @@ import User from "../models/User";
 
 export const home = async(req,res) => {
     
-    const videos = await Video.find({});
+    const videos = await Video.find({})
+        .populate("owner")
+        .sort({createAt:"desc"});
+    
     return res.render("home", {pageTitle : "Home", videos});
 };
 
@@ -29,13 +32,17 @@ export const getEdit = async(req,res) => {
     return res.render("edit", {pageTitle:`Edit ${video.title}`, video});
 };
 export const postEdit = async(req, res) => {
+    const {
+        user:{_id},
+    }=req.session;
     const {id} = req.params;
     const {title, description, hashtags} = req.body;
-    const video = await Video.exists({_id: id});
+    const video = await Video.exists({ _id: id });
+    console.log(video.owner)
     if(!video){
         return res.status(404).render("404",{pageTitle:"Video not found."});
     }
-    if(String(video.owner) !== req.session.user._id){
+    if(String(video.owner) !== String(_id)) {
         return res.status(403).redirect("/")
     }
     await Video.findByIdAndUpdate(id,{

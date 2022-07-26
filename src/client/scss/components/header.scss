@@ -1,0 +1,75 @@
+header {
+    background-color: rgba($color: $headbg, $alpha: 0.8);
+    border-bottom: 1px solid rgba($color: white, $alpha: 0.1);
+    padding:10px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 5;
+
+    ul{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        li{
+            margin-left: 15px;
+        }
+    }
+    .header__logo{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        i{
+            color: $red;
+            font-size: 30px;
+        }
+        div{
+            margin-left: 3px;
+            font-size: 25px;
+            font-weight: 600;
+            color: white;
+        }
+        sup{
+            font-size: smaller;
+            color: #aaaaaa;
+            margin-left: 5px;
+            margin-bottom: 15px;
+        }
+    }
+    .login,.logout {
+        border: 1px solid;
+        border-radius: 2px;
+        color: #43a5f7;
+        padding: 5px 10px;
+    }
+    .upload{
+        border:1px solid;
+        border-radius: 30px;
+        padding: 5px 10px;
+        padding-top: 3px;
+    }
+    
+}
+main{
+    background-color: &bg;
+    padding-top: 50px;
+    
+}
+body::-webkit-scrollbar{
+    width: 8px;
+    }
+body::-webkit-scrollbar-thumb {
+    height: 30%; /* 스크롤바의 길이 */
+    background: rgb(183, 164, 164); /* 스크롤바의 색상 */
+    border-radius: 10px;
+    }
+body::-webkit-scrollbar-track {
+        background: rgba(33, 122, 244, .1);  /*스크롤바 뒷 배경 색상*/
+    }
+
+    
+
+

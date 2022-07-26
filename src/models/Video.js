@@ -13,7 +13,6 @@ const videoSchema = new mongoose.Schema({
     },
     owner :{type:mongoose.Schema.Types.ObjectId, required: true, ref:"User"},
 });
-
 videoSchema.static("formatHashtags", function (hashtags) {
   return hashtags
     .split(",")
