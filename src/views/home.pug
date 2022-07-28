@@ -2,9 +2,9 @@ extends base.pug
 include mixins/video
 
   
-block content 
-    
-    each x in videos 
-        +video(x)
-    else 
-        li sorry nothing found.ss
+block content
+    div.homecontent 
+        each x in videos 
+            +video(x)
+        else 
+            li sorry nothing found.ss

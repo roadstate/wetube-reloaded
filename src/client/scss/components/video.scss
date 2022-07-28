@@ -1,10 +1,46 @@
+.homecontent{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    
+}
+.video-mixin{
+    margin: 30px;
+    padding: 10px;
+    display:block;
+    width: 280px;
+    height: 250px;
+}
+.video-mixin__thumb{
+    
+    background-color: antiquewhite;
+    width:100%;
+    height:155px;
+}
+.V1{
+    padding-top: 13px;
+    display: flex;
+}
+.video-mixin__avatar{
+    padding-left: 3px;
+    padding-right: 5px;
+    img{
+        width: 40px;
+        height: 40px;
+        border-radius: 50px;
+    }
+}
+.video-mixin__data{
+    margin-left: 10px;
+}
 .video-mixin__title{
     font-size: 18px;
     font-weight: 500;
 }
 .video-mixin__meta{
+    margin-top: 20px;
     span{
         color: rgba($color: white, $alpha: 0.8);
         font-size: 13px;
+        line-height: 8px;
     }
 }

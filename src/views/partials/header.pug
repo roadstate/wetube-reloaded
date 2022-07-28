@@ -10,9 +10,10 @@ header
                     i.fa-solid.fa-magnifying-glass
             if loggedIn   
                 li 
-                    a(href="/users/edit") 프로필수정
+                    a(href="/users/edit")
+                        <i class="fa-solid fa-user-pen"></i>
                 li 
-                    a(href=`/users/${loggedInUser._id}`) #{loggedInUser.name} 의 동영상
+                    a(href=`/users/${loggedInUser._id}`) 내 동영상
                 li 
                     a(href="/videos/upload").upload
                         <i class="fa-solid fa-upload"></i> 업로드

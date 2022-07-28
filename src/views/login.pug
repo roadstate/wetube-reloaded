@@ -3,15 +3,14 @@ extends base
 block content 
     if errorMessage 
         span=errorMessage
-    form(method="POST")
+    div.rarr2
+        a(href="/join") 계정이 없으신가요? &rarr;
+    form(method="POST",autocomplete="off").profile__form3
         input(placeholder="Email", name="email", type="email",required)
         input(placeholder="Password", name="password", type="password",required)
         input(type="submit", value="Join")
         br
-        a(href="/users/github/start") Continue with Github &rarr;
+        a(href="/users/github/start").login__github Continue with Github &rarr;
         br
-        a(href="/users/kakao/start") Continue with kakaotalk &rarr;
-    hr
-    div 
-        span Don't have an account? 
-        a(href="/join") Create one now &rarr;
+        a(href="/users/kakao/start").login__kakao
+            img(src="img/kakao_login_medium_narrow.jpeg")

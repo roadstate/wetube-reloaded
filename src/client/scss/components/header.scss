@@ -1,5 +1,5 @@
 header {
-    background-color: rgba($color: $headbg, $alpha: 0.8);
+    background-color: rgba($color: $headbg, $alpha: 0.9);
     border-bottom: 1px solid rgba($color: white, $alpha: 0.1);
     padding:10px 25px;
     display: flex;
@@ -58,17 +58,7 @@ main{
     padding-top: 50px;
     
 }
-body::-webkit-scrollbar{
-    width: 8px;
-    }
-body::-webkit-scrollbar-thumb {
-    height: 30%; /* 스크롤바의 길이 */
-    background: rgb(183, 164, 164); /* 스크롤바의 색상 */
-    border-radius: 10px;
-    }
-body::-webkit-scrollbar-track {
-        background: rgba(33, 122, 244, .1);  /*스크롤바 뒷 배경 색상*/
-    }
+
 
     
 

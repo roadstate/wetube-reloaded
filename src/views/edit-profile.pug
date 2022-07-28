@@ -1,14 +1,15 @@
 extends base
 
 block content 
-    img(src="/"+ loggedInUser.avatarUrl, width="100", height="100")
-    form(method="POST", enctype="multipart/form-data")
-        label(for="avatar") Avatar 
-        input(type="file", id="avatar", name="avatar", accept="image/*")
-        input(name="email", type="text",required, value=loggedInUser.email, readonly)
+    img(src="/"+ loggedInUser.avatarUrl, width="100", height="100").profile__img
+    form(method="POST", enctype="multipart/form-data", autocomplete="off", spellcheck="false").profile__form
+        input(type="file", id="avatar", name="avatar", accept="image/*").input__avatar
+        input(name="email", type="text",required, value=loggedInUser.email, readonly).input__email
         input(placeholder="Name", name="name", type="text",required, value=loggedInUser.name)
         input(placeholder="Location", name="location", type="text", value=loggedInUser.location)
-        input(type="submit", value="Update Profile")
+        div.profile__btn
+            input(type="submit", value="Update Profile")
+            <i class="fa-solid fa-pen-to-square"></i>
         if !loggedInUser.socialOnly
             hr
             a(href="change-password") Change Password &rarr;
